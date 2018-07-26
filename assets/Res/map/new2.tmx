@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="64" tileheight="64" infinite="0" nextobjectid="5">
+ <tileset firstgid="1" name="imgGirl" tilewidth="64" tileheight="64" tilecount="80" columns="8">
+  <image source="imgGirl.png" width="527" height="699"/>
+ </tileset>
+ <layer name="layer" width="8" height="8" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJy9zScOADAMwMBIHaSDdJCO/z+zxlFwwQEjOxHxCIhwqhMyCqrRDR0D0+iFjYNrtP79/j/IDwQh
+  </data>
+ </layer>
+ <layer name="块层 2" width="8" height="8" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjZAAABAAAB
+  </data>
+ </layer>
+ <objectgroup name="object" offsetx="32" offsety="-32">
+  <object id="1" name="line1" type="line" x="128" y="192">
+   <polyline points="0,0 256,0 256,256 0,0"/>
+  </object>
+  <object id="2" name="line2" type="line" x="0" y="0">
+   <polyline points="0,0 64,0 64,64 0,64"/>
+  </object>
+  <object id="3" name="line3" type="line" x="512" y="512">
+   <polyline points="0,0 -64,-256 0,-192 -64,0"/>
+  </object>
+  <object id="4" name="point1" type="point" x="118" y="472">
+   <point/>
+  </object>
+ </objectgroup>
+</map>
