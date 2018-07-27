@@ -19,24 +19,26 @@ cc.Class({
         this.label.string = this.text;
         let self = this
         this.node.on('touchend',event => {
-            // cc.log(event,'mousedown')
             let location = event.touch.getLocation()
-            location = this.convertToNodeSpaceAR(location)
-            let action = cc.moveTo(2, location.x, location.y)
+            let location2 = self.btn_a.node.parent.convertToNodeSpaceAR(location)
+            cc.log(location,location2)
+            let action = cc.moveTo(2, location2.x, location2.y)
             // 执行动作
             self.btn_a.node.stopAllActions()
             self.btn_a.node.runAction(action)
 
-            this.emit('jump', {
-                msg: 'jump',
-            });
+            // cc.log('print jump')
+            // this.node.emit('jump', {
+            //     msg: 'jump',
+            // });
 
             // this.dispatchEvent( new cc.Event.EventCustom('walk', true) );
         })
 
         this.node.on('jump',event => {
+
             let button = self.getComponentInChildren("ButtonScript")
-            if (button==null) {
+            if (button!=null) {
                 button.onCustomEvent(event)
             }
         })
