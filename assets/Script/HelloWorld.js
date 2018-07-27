@@ -18,7 +18,7 @@ cc.Class({
     onLoad: function () {
         this.label.string = this.text;
         let self = this
-        this.node.on('touchend',function(event) {
+        this.node.on('touchend',event => {
             // cc.log(event,'mousedown')
             let location = event.touch.getLocation()
             location = this.convertToNodeSpaceAR(location)
@@ -36,7 +36,9 @@ cc.Class({
 
         this.node.on('jump',event => {
             let button = self.getComponentInChildren("ButtonScript")
-            button.onCustomEvent(event)
+            if (button==null) {
+                button.onCustomEvent(event)
+            }
         })
     },
 

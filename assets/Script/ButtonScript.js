@@ -49,15 +49,14 @@ cc.Class({
 
     start () {
         this.isStart = true
-        let self = this;
-        this.node.on('touchend',function(event,customEventData) {
+        this.node.on('touchend', (event,customEventData) => {
             // cc.log(event,customEventData)
             // event.stopPropagation()
-            // self.node.setScale(2, 2)
-            let parent = this.parent
+            this.node.setScale(2, 2)
+            let parent = this.node.parent
             let location = event.touch.getLocation()
-            cc.log(location,parent.convertToNodeSpace(location),this.convertToNodeSpace(location))
-            cc.log(location,parent.convertToNodeSpaceAR(location),this.convertToNodeSpaceAR(location))
+            cc.log(location,parent.convertToNodeSpace(location),this.node.convertToNodeSpace(location))
+            cc.log(location,parent.convertToNodeSpaceAR(location),this.node.convertToNodeSpaceAR(location))
             // this.emit('walk', {
             //     msg: 'Hello, this is Cocos Creator',
             // });
